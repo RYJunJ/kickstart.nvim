@@ -243,14 +243,22 @@ require('lazy').setup({
         sort = {
           sorter = 'case_sensitive',
         },
-        view = {
-          width = 30,
-        },
         renderer = {
           group_empty = true,
         },
         filters = {
           dotfiles = true,
+        },
+        update_focused_file = {
+          enable = true,
+          update_root = {
+            enable = true,
+          },
+        },
+        actions = {
+          open_file = {
+            resize_window = false,
+          },
         },
       }
     end,
@@ -598,7 +606,7 @@ require('lazy').setup({
       local servers = {
         clangd = {
           cmd = { 'clangd' },
-          filetypes = { 'h', 'c', 'cc', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
+          filetypes = { 'c', 'cc', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
           root_dir = require('lspconfig').util.root_pattern(
             '.clangd',
             '.clang-tidy',
